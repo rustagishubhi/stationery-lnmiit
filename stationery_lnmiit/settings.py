@@ -37,10 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'faculty.apps.FacultyConfig',
-    'officeadmin.apps.OfficeadminConfig',
-    'signin.apps.SigninConfig',
-    'signup.apps.SignupConfig'
+    'faculty',
+    'officeadmin',
+    'login',
 ]
 
 MIDDLEWARE = [
@@ -127,4 +126,4 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
