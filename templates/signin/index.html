@@ -4,9 +4,67 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
       <title></title>
-      
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
    </head>
    <body>
-     <h1>HelloWorld!</h1>
+       <nav class="navbar text-center" style="background-color: #576654">
+         <div class="container">
+           <h2 style="color: #ffffff">Welcome To Stationery, LNMIIT</h2>
+         </div>
+       </nav>
+
+       <br>
+        {% block body_block %}
+            <div class="container">
+                {% if error %}
+                    <div class="card">
+                        <div class="card-header">
+                            Invalid Login Credentials. Please Try Again.
+                        </div>
+                    </div>
+                    <br>
+                {% endif %}
+                <div class="card">
+                    <div class="card-header text-center">
+                        Sign In
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Enter Your Details To Login</h5>
+                        <form>
+                            <label for="username">Username:</label><br>
+                            <input type="text" class="form-control formback" name="username" placeholder="Username">
+                            <br>
+                            <label for="password">Password:</label><br>
+                            <input type="password" class="form-control formback" name="password" placeholder="Password">
+                            <br>
+                            <button type="submit" class="btn">Sign In</button>
+                        </form>
+                    </div>
+                    <div class="card-footer">
+                        Not A Member? Click Here To Sign Up.
+                    </div>
+                </div>
+            </div>
+              {% endblock %}<br>
+      <footer class="page-footer font-small" style="background-color: #576654; color: #ffffff;">
+        <div class="container">
+          <div class="row py-4 d-flex align-items-center">
+            <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
+              <h6 class="mb-0">The LNMIIT</h6>
+            </div>
+            <div class="col-md-6 col-lg-7 text-center text-md-right">
+              <a href="https://goo.gl/maps/" target="_blank">
+                <i class="fas fa-map-marker-alt mr-4"></i>
+              </a>
+              <a href="http://www.github.com/" target="_blank">
+                <i class="fab fa-github mr-4"></i>
+              </a>
+              <a href="mailto:">
+                <i class="fa fa-envelope mr-4"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </footer>
    </body>
 </html>
