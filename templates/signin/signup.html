@@ -1,0 +1,60 @@
+{% extends "signin/index.html" %}
+{% block title_block %}
+    <title>Sign Up!</title>
+{% endblock %}
+{% block body_block%}
+    <div class="container">
+      <div class="col-xs-0 col-sm-0 col-md-3">
+
+      </div>
+        {% if error %}
+            <div class="card">
+                <div class="card-body">
+                    {{ error }}
+                </div>
+            </div>
+            <br>
+        {% endif %}
+        <div class="card col-md-6">
+            <div class="card-header text-center" style="background-color: #576654; padding: 1%; color: #ffffff;">
+                Sign Up
+            </div>
+            <div class="card-body" style="padding: 2%; background-color: #ffffff;">
+                <h5 class="card-title">Enter Your Details To Sign Up</h5>
+                <form enctype="multipart/form-data" action="{% url 'signup' %}" method="POST">
+                  <div class="form-row">
+                      <div class="col-6">
+                        <b>First Name</b>
+                          {{user_form.first_name}}
+                      </div><br>
+                      <div class="col-6">
+                        <b>Last Name</b>
+                          {{user_form.last_name}}
+                      </div>
+                  </div>
+                  <br>
+                  <div class="form-group">
+                    <b>Email</b>
+                        {{user_form.email}}
+                        <small class="form-text">We'll never share your email with anyone else.</small>
+                  </div>
+                  <div class="form-group">
+                    <b>Username</b>
+                        {{user_form.username}}
+                        <small class="form-text">The Username Will Be Unique For All User. It Will be Used For Login.</small>
+                  </div>
+                  <div class="form-group">
+                    <b>Password</b>
+                        {{user_form.password}}
+                        <small class="form-text">Password Should Be Minimum Of 8 Characters and contain atleast 1 character and number.</small>
+                  </div>
+                  <br>
+                  <button type="submit" class="btn" style="background-color: #576654; color: #ffffff;">Sign Up</button>
+                </form>
+            </div>
+            <div class="card-footer" style="color: #ffffff; padding: 1%;">
+                Already have an account? <a href="{% url 'signin' %}">Sign In</a>.
+            </div>
+        </div>
+    </div>
+{% endblock %}

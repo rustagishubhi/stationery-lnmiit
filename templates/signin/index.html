@@ -6,65 +6,79 @@
       <title></title>
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
    </head>
-   <body>
-       <nav class="navbar text-center" style="background-color: #576654">
+   <body style="background-color: #576654;">
+       <!--Navigation Bar-->
+       <nav class="navbar text-center" style="background-color: #00000099; padding: 1%;">
          <div class="container">
-           <h2 style="color: #ffffff">Welcome To Stationery, LNMIIT</h2>
+           <h2 style="color: #ffffff;">Welcome To Stationery, LNMIIT</h2>
          </div>
        </nav>
+       <!-- Navigation Bar Ends -->
 
-       <br>
-        {% block body_block %}
-            <div class="container">
-                {% if error %}
-                    <div class="card">
-                        <div class="card-header">
-                            Invalid Login Credentials. Please Try Again.
-                        </div>
-                    </div>
-                    <br>
-                {% endif %}
-                <div class="card">
-                    <div class="card-header text-center">
-                        Sign In
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Enter Your Details To Login</h5>
-                        <form>
-                            <label for="username">Username:</label><br>
-                            <input type="text" class="form-control formback" name="username" placeholder="Username">
-                            <br>
-                            <label for="password">Password:</label><br>
-                            <input type="password" class="form-control formback" name="password" placeholder="Password">
-                            <br>
-                            <button type="submit" class="btn">Sign In</button>
-                        </form>
-                    </div>
-                    <div class="card-footer">
-                        Not A Member? Click Here To Sign Up.
-                    </div>
-                </div>
-            </div>
-              {% endblock %}<br>
-      <footer class="page-footer font-small" style="background-color: #576654; color: #ffffff;">
-        <div class="container">
-          <div class="row py-4 d-flex align-items-center">
-            <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
-              <h6 class="mb-0">The LNMIIT</h6>
-            </div>
-            <div class="col-md-6 col-lg-7 text-center text-md-right">
-              <a href="https://goo.gl/maps/" target="_blank">
-                <i class="fas fa-map-marker-alt mr-4"></i>
-              </a>
-              <a href="http://www.github.com/" target="_blank">
-                <i class="fab fa-github mr-4"></i>
-              </a>
-              <a href="mailto:">
-                <i class="fa fa-envelope mr-4"></i>
-              </a>
-            </div>
+       <!-- Main Body -->
+       {% block body_block %}
+      <div class="container">
+          <div class="col-xs-0 col-sm-0 col-md-3">
+
           </div>
-        </div>
-      </footer>
+          {% if error %}
+              <div class="card col-md-6">
+                  <div class="card-header">
+                      Invalid Login Credentials. Please Try Again.
+                  </div>
+              </div>
+              <br>
+          {% endif %}
+          <div class="card col-md-6">
+              <div class="card-header text-center" style="background-color: #576654; padding: 1%; color: #ffffff;">
+                  Sign In
+              </div>
+              <div class="card-body" style="padding: 2%; background-color: #ffffff;">
+                  <h5 class="card-title">Enter Your Details To Login</h5>
+                  <form action="signin">
+                      <label for="username">Username:</label><br>
+                      <input type="text" class="form-control formback" name="username" placeholder="Username">
+                      <br>
+                      <label for="password">Password:</label><br>
+                      <input type="password" class="form-control formback" name="password" placeholder="Password">
+                      <br>
+                      <button type="submit" class="btn" style="background-color: #576654; color: #ffffff;">Sign In</button>
+                  </form>
+              </div>
+              <div class="card-footer" style="color: #ffffff; padding: 1%;">
+                Not A Member? Click Here To <a href="{% url 'signup' %}">Sign Up</a>.
+              </div>
+          </div>
+      </div>
+      {% endblock %}<br><br>
+       <!-- Main Body Ends -->
+
+       <!-- Footer -->
+       <footer class="footer" style="background-color: #00000099; padding: 4%;">
+         <div class="container" style="color: #ffffff;">
+           <div class="row">
+             <div class="col-sm-6">
+               <p>The LNM Institute of Information Technology<br>
+               Rupa ki Nangal, Post-Sumel, Via-Jamdoli<br>
+               Jaipur, Rajasthan 302031</p>
+             </div>
+             <div class="col-sm-6" style="float:right;">
+               <div class="text-center">
+                   <a class="btn btn-social-icon btn-google" href="http://google.com/+">Google+</a>
+                   <a class="btn btn-social-icon btn-facebook" href="http://www.facebook.com/profile.php?id=">Facebook</a>
+                   <a class="btn btn-social-icon btn-linkedin" href="http://www.linkedin.com/in/">LinkedIn</a>
+                   <a class="btn btn-social-icon btn-twitter" href="http://twitter.com/">Twitter</a>
+                   <a class="btn btn-social-icon btn-google" href="http://youtube.com/">Youtube</a>
+                   <a class="btn btn-social-icon" href="mailto:">Mail</a>
+               </div>
+             </div>
+           </div>
+           <div class="row text-center">
+             <p>&copy Copyright 2019 | Developed by <i>Shubhi Rustagi</i></p>
+             <a href="https://github.com/rustagishubhi">Github</a>
+           </div>
+         </div>
+       </footer>
+       <!-- Footer Ends -->
    </body>
 </html>

@@ -19,6 +19,7 @@ from django.conf.urls.static import static
 from login import views
 
 urlpatterns = [
-    path('', views.signin),
+    path('', views.signin, name= 'signin'),
+    path('signup/', views.signup, name = 'signup'),
     path('admin/', admin.site.urls),
 ]
