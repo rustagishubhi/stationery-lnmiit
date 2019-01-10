@@ -17,40 +17,7 @@
 
        <!-- Main Body -->
        {% block body_block %}
-      <div class="container">
-          <div class="col-xs-0 col-sm-0 col-md-3">
-
-          </div>
-          {% if error %}
-              <div class="card col-md-6">
-                  <div class="card-header">
-                      Invalid Login Credentials. Please Try Again.
-                  </div>
-              </div>
-              <br>
-          {% endif %}
-          <div class="card col-md-6">
-              <div class="card-header text-center" style="background-color: #576654; padding: 1%; color: #ffffff;">
-                  Sign In
-              </div>
-              <div class="card-body" style="padding: 2%; background-color: #ffffff;">
-                  <h5 class="card-title">Enter Your Details To Login</h5>
-                  <form action="signin">
-                      <label for="username">Username:</label><br>
-                      <input type="text" class="form-control formback" name="username" placeholder="Username">
-                      <br>
-                      <label for="password">Password:</label><br>
-                      <input type="password" class="form-control formback" name="password" placeholder="Password">
-                      <br>
-                      <button type="submit" class="btn" style="background-color: #576654; color: #ffffff;">Sign In</button>
-                  </form>
-              </div>
-              <div class="card-footer" style="color: #ffffff; padding: 1%;">
-                Not A Member? Click Here To <a href="{% url 'signup' %}">Sign Up</a>.
-              </div>
-          </div>
-      </div>
-      {% endblock %}<br><br>
+       {% endblock %}<br><br>
        <!-- Main Body Ends -->
 
        <!-- Footer -->

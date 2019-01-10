@@ -17,8 +17,12 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls.static import static
 from login import views
+from faculty import views as fviews
+from officeadmin import views as oviews
 
 urlpatterns = [
+    path('faculty/', fviews.index, name='faculty'),
+    path('officeadmin/', oviews.index, name= 'officeadmin'),
     path('', views.signin, name= 'signin'),
     path('signup/', views.signup, name = 'signup'),
     path('admin/', admin.site.urls),
