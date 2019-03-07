@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib.auth.models import User
-from faculty.models import FacultyProfileInfo
+from StationaryAPI.models import Faculty
 
 class UserForm(forms.ModelForm):
 
@@ -17,5 +17,5 @@ class UserForm(forms.ModelForm):
 class UserProfileInfoForm(forms.ModelForm):
 
     class Meta():
-        model = FacultyProfileInfo
-        fields = ('fid',)
+        model = Faculty
+        fields = ('FID',)

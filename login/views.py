@@ -6,13 +6,13 @@ from django.urls import reverse
 from django.contrib.auth.decorators import login_required
 from django.core.exceptions import ValidationError
 from django.contrib.auth.password_validation import validate_password
-from faculty.models import FacultyProfileInfo
+from StationaryAPI.models import Faculty
 
 # Create your views here.
 def signin(request):
     dictionery = dict()
     if request.user.is_active:
-        return HttpResponseRedirect(reverse('index'))
+        return HttpResponseRedirect(reverse('faculty'))
     if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')

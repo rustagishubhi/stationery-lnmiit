@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'faculty',
     'officeadmin',
     'login',
+    'StationaryAPI',
 ]
 
 MIDDLEWARE = [
